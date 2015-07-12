@@ -31,6 +31,9 @@ vs <- as.numeric(df$Sub_metering_1)
 # plot without x labels
 plot(vs,type="l",xaxt="n", ylab="Energetic sub metering")
 
+# draw legend
+legend("topright", cex=0.5, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), col=c("Black", "Red", "Blue"))
+
 # set x labels
 axis(1,at=c(1,l/2,l), labels=c("Thu", "Fri", "Sat"))
 
@@ -41,9 +44,6 @@ lines(1:l, vs, col="Red")
 # plot 3. metering
 vs <- as.numeric(df$Sub_metering_3)
 lines(1:l, vs, col="Blue")
-
-# draw legend
-legend("topright", legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=c(1,1,1), col=c("Black", "Red", "Blue"))
 
 # convert to numeric
 vs <- as.numeric(df$Global_reactive_power)
